@@ -23,7 +23,6 @@ jobs:
 
   deploy-staging:
     needs: [build]
-    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     environment: 
       name: staging
@@ -43,7 +42,7 @@ jobs:
           echo test, and deploy your project.
 
   test-site:
-    needs: [deploy-staging]
+    needs: [build]
     runs-on: ubuntu-latest
     name: Test on ${{ matrix.browser }}
     strategy:
@@ -59,7 +58,7 @@ jobs:
           echo test, and deploy your project.
 
   deploy-production:
-    needs: [test-site]
+    needs: [build]
     if: github.ref == 'refs/heads/main'
 
     runs-on: ubuntu-latest
