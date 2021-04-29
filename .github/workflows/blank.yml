@@ -57,7 +57,7 @@ jobs:
           echo Add other actions to build,
           echo test, and deploy your project.
 
-  Mantan 2:
+  Mantan-2:
     needs: [build]
     runs-on: ubuntu-latest
     name: Test on ${{ matrix.browser }}
