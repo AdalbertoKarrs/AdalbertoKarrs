@@ -27,7 +27,7 @@ jobs:
     name: Test on ${{ matrix.browser }}
     strategy:
       matrix:
-        browser: ['edge', 'chrome', 'mozilla']
+        browser: ['edge', 'chrome', 'mozilla', 'tor', 'brave', 'edge', 'chrome', 'mozilla', 'tor', 'brave', 'edge', 'chrome', 'mozilla', 'tor', 'brave', 'edge', 'chrome', 'mozilla', 'tor', 'brave',]
     steps:
       - name: Run a one-line script
         run: echo Hello, world!
