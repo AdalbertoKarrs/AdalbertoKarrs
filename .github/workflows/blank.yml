@@ -7,7 +7,7 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  Doa-Mantan:
+  build:
     runs-on: ubuntu-latest
     steps:
 
@@ -22,7 +22,7 @@ jobs:
           echo test, and deploy your project.
 
   Mantan-3:
-    needs: [Doa-Mantan]
+    needs: [build]
     runs-on: ubuntu-latest
     name: Test on ${{ matrix.browser }}
     strategy:
