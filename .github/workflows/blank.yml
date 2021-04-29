@@ -21,18 +21,14 @@ jobs:
           echo Add other actions to build,
           echo test, and deploy your project.
 
-  deploy-staging:
+  Mantan-3:
     needs: [build]
     runs-on: ubuntu-latest
-    environment: 
-      name: staging
-      url: http://staging.int.foo.com
-
+    name: Test on ${{ matrix.browser }}
+    strategy:
+      matrix:
+        browser: ['edge', 'chrome', 'mozilla']
     steps:
-
-      - uses: actions/checkout@v2
-
-
       - name: Run a one-line script
         run: echo Hello, world!
 
@@ -41,7 +37,8 @@ jobs:
           echo Add other actions to build,
           echo test, and deploy your project.
 
-  test-site:
+
+  Mantan-1:
     needs: [build]
     runs-on: ubuntu-latest
     name: Test on ${{ matrix.browser }}
