@@ -86,19 +86,5 @@ jobs:
           echo Add other actions to build,
           echo test, and deploy your project.
           
-    Mantan-5:
-    needs: [build]
-    runs-on: ubuntu-latest
-    name: Test on ${{ matrix.browser }}
-    strategy:
-      matrix:
-        browser: ['edge', 'chrome', 'mozilla']
-    steps:
-      - name: Run a one-line script
-        run: echo Hello, world!
-
-      - name: Run a multi-line script
-        run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
-      
+    
+  
